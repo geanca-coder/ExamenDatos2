@@ -40,7 +40,11 @@ void Person::setGender(const string &gender) {
 }
 
 ostream &operator<<(ostream &os, const Person &person) {
-    os << "Nombre: " << person.nombre << "\nApellido: " << person.apellido << "\nEmail: " << person.email << "\nGender: "
-       << person.gender;
+    os <<person.getNombre();
     return os;
 }
+
+Person::operator string() {
+    return getNombre();
+}
+

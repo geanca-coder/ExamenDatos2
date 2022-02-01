@@ -31,6 +31,8 @@ public:
 
     friend ostream &operator<<(ostream &os, const Person &person);
 
+    operator string();
+
 };
 
 
