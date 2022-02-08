@@ -42,7 +42,7 @@ string Graph<T>::print() {
     for(auto it=l.begin();it!=l.end();it++){
         ss<<*it->first<<" -> ";
         for(auto it1=it->second.begin();it1!=it->second.end();it1++){
-            ss<<"("<<*it1->first<<","<<it1->second<<"),";
+            ss<<"("<<it1->first<<","<<it1->second<<"),";
         }
         ss<<"\n";
     }
@@ -78,7 +78,7 @@ string Graph<T>::dijkstra(T src) {
     }
 
     for(auto d=dist.begin();d!=dist.end();d++){
-        ss<<*d->first<<" is located at distance of "<<d->second<<"\n";
+        ss<<d->first<<" is located at distance of "<<d->second<<"\n";
     }
     return ss.str();
 }
