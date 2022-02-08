@@ -38,6 +38,9 @@ void Graph<T>::addEdge(T u, T v, int wt, bool bidir) {
 
 template<typename T>
 string Graph<T>::print() {
+    /*
+     Hace la impresion del grafo
+     */
     stringstream ss;
     for(auto it=l.begin();it!=l.end();it++){
         ss<<*it->first<<" -> ";
