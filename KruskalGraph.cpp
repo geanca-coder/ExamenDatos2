@@ -3,6 +3,14 @@
 //
 
 #include "KruskalGraph.h"
+
+KruskalGraph::KruskalGraph() {
+    objeto = new FileManager();
+    this->V = objeto->nodesCounter();
+    this->parent = new int[V];
+    cost = objeto->graphKrusKalMaker();
+}
+
 int KruskalGraph::find(int i)
 {
     while (parent[i] != i)
@@ -17,13 +25,12 @@ void KruskalGraph::union1(int i, int j)
     parent[a] = b;
 }
 
-string KruskalGraph::kruskalMST(int cost[][V])
-{
+string KruskalGraph::kruskalMST() {
+
     stringstream ss;
     int mincost = 0;
     for (int i = 0; i < V; i++)
         parent[i] = i;
-
     int edge_count = 0;
     while (edge_count < V - 1) {
         int min = INT_MAX, a = -1, b = -1;
@@ -36,7 +43,7 @@ string KruskalGraph::kruskalMST(int cost[][V])
                 }
             }
         }
-        string a1, b1, nodes="ABCDEFGHI";
+        string a1, b1, nodes=objeto->allNodes();
         union1(a, b);
         a1= nodes.at(a);
         b1 = nodes.at(b);
@@ -46,4 +53,13 @@ string KruskalGraph::kruskalMST(int cost[][V])
     }
     ss<<"Minimun cost="<<mincost<<"\n";
     return ss.str();
+}
+
+KruskalGraph::~KruskalGraph() {
+    delete objeto;
+    delete parent;
+    for (int i = 0; i <V; i++)
+        delete cost[i];
+    delete[] cost;
+
 }

@@ -6,17 +6,21 @@
 #define EXAMENDATOS2_KRUSKALGRAPH_H
 
 #include <bits/stdc++.h>
-#define V 9
+#include "FileManager.h"
 using namespace std;
 class KruskalGraph {
 private:
-    int parent[V];
+    FileManager *objeto;
+    int V;
+    int *parent;
+    int **cost;
 public:
+    KruskalGraph();
     int find(int i);
     void union1(int i, int j);
-    string kruskalMST(int cost[][V]);
+    string kruskalMST();
+    ~KruskalGraph();
 
 };
-
 
 #endif //EXAMENDATOS2_KRUSKALGRAPH_H

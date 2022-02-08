@@ -7,12 +7,19 @@
 
 #include "Graph.h"
 #include <fstream>
+#include <iterator>
+#include <unordered_set>
+using namespace std;
 class FileManager {
+private:
+    unordered_set<string>set;
 public:
     FileManager();
 
     Graph<string>* graphMaker();
-    
+    int nodesCounter();
+    int **graphKrusKalMaker();
+    string allNodes();
     ~FileManager();
 
 };
