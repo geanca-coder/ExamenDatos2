@@ -1,9 +1,8 @@
-#include "KruskalGraph.h"
-#include "FileManager.h"
+#include "View.h"
 int main()
 {
-    auto*graphK = new KruskalGraph();
-    cout<<graphK->kruskalMST();
-    delete graphK;
+    auto* view = new View();
+    view->mainMenu();
+    delete view;
     return 0;
 }

@@ -8,11 +8,11 @@
 #include "Graph.h"
 #include <fstream>
 #include <iterator>
-#include <unordered_set>
+#include <set>
 using namespace std;
 class FileManager {
 private:
-    unordered_set<string>set;
+    set<string>set;
 public:
     FileManager();
 
