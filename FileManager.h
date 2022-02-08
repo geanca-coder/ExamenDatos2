@@ -10,7 +10,9 @@
 class FileManager {
 public:
     FileManager();
+
     Graph<string>* graphMaker();
+
     ~FileManager();
 
 };
